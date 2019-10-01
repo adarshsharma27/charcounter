@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temperature Convertor</title>
+    <style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    
+    .main-continer{
+        
+        background-image: linear-gradient(to top right, #EBF1F4 50%,#64A2B2 33%);
+        height:100vh;
+        
+      
+}
+    h3{
+        color:#EBF1F4;
+        font-size: 20px;
+        word-spacing: 5px;
+        text-align: center;
+        letter-spacing: 3px;
+
+    }
+    input{
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        font-size: 17px;
+        border-radius: 5px;
+    border: 1px solid  #68C5DB;
+    box-shadow: 1px 1px 3px 1px  #68C5DB;
+    color:#b7bdca;
+}
+
+textarea{
+    text-align: start;
+    font-size: 17px;
+        border-radius: 5px;
+    border: 1px solid #68C5DB;
+    box-shadow: 1px 1px 3px 1px #68C5DB;
+    color:#b7bdca;
+    width: 414px;
+    height: 200px;
+    margin-bottom: 60px;
+    margin-left: -101px;
+}
+button{
+    position:relative;
+    width: 143px;
+    height: 45px;
+    margin-left: 25px;
+    background-color: #448FA3;
+    border:1px solid #5599AB;
+    color:#fefffa;
+    border-radius:5px;
+    font-size:15px;
+    font-weight: bold;
+    
+}
+
+    .convertor {
+    width: 210px;
+    height: 500px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+   
+
+}
+    ::placeholder{
+        color:#d6dbe6;
+    }
+.btn{
+    position: relative;
+    overflow: hidden;
+}
+   button::before{
+    content: 'Click Me';
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    width: 143px;
+    height: 46px;
+    background-color:#5599AB;
+    border-radius: 5px;
+    transform: translateY(-46px);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    font-size:16px;
+    
+
+   }
+   button:hover::before{
+   transform: translateY(0px);
+    transition: all 1.2s ease-in; /* addition efftect can be come by making opacity=0.5  and remove flex*/ 
+
+   }
+   
+    </style>
+</head>
+<body>
+    <div class="main-continer">
+        <h3> Charactor Countor</h3>
+        <div class="convertor">
+            <textarea  id="first"></textarea>
+         <div class="btn">
+         <button onclick="convert()"> Count</button>
+         <div class="overlay"><h5></h5></div>
+        </div>
+         <input type="text" id="second" readonly > 
+    </div>
+                </div>
+    <script>
+         
+       const convert=()=>{
+           let fartemp=document.getElementById("first").value.length;
+           let word=document.getElementById("first").value;
+            word=word.match( /\w+/g );
+                 let wc = word.length;
+                 alert("No. of words"+" "+wc);
+           document.getElementById("second").value=fartemp; 
+            
+                
+           
+      }
+
+     </script>
+
+</body>
+</html>
